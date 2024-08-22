@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "File_accessAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "File_accessAbility_label",
+      "value": "label"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "模块描述"
+    },
+    {
+      "name": "File_accessAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "File_accessAbility_label",
+      "value": "label"
+    }
+  ]
+}
