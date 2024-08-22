@@ -1,5 +1,5 @@
 {
-  "name": "react-native-file-access",
+  "name": "@react-native-oh-tpl/react-native-file-access",
   "version": "3.1.0",
   "description": "Filesystem access for React Native",
   "main": "lib/commonjs/index",
@@ -41,14 +41,23 @@
     "download",
     "file",
     "filesystem",
-    "fs"
+    "fs",
+    "harmony"
   ],
-  "repository": "https://github.com/alpha0010/react-native-file-access",
+  "harmony": {
+    "alias": "react-native-file-access",
+    "codegenConfig": {
+      "specPaths": [
+        "./src"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/react-native-oh-library/react-native-file-access.git"
+  },
   "author": "alpha0010 <alpha0010@users.noreply.github.com> (https://github.com/alpha0010)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alpha0010/react-native-file-access/issues"
-  },
   "homepage": "https://github.com/alpha0010/react-native-file-access#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -76,7 +85,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-file-access": "3.1.0"
   },
   "jest": {
     "preset": "react-native",
