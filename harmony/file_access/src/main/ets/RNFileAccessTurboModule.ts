@@ -257,7 +257,7 @@ export class RNFileAccessTurboModule extends TurboModule implements TM.FileAcces
           statResult.path = path;
           statResult.size = stat.size;
           statResult.lastModified = stat.mtime;
-          statResult.type = stat.isDirectory() ? '1' : '0';
+          statResult.type = stat.isDirectory() ? 'directory' : 'file';
           resolve(statResult);
         }
       });
@@ -390,7 +390,7 @@ export class RNFileAccessTurboModule extends TurboModule implements TM.FileAcces
             return {
               filename: item,
               path: path + "/" + item,
-              type: stat.isDirectory() ? '1' : '0',
+              type: stat.isDirectory() ? 'directory' : 'file',
               size: stat.size,
               lastModified: stat.mtime,
             }
