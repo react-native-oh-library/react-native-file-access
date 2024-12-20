@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-file-access",
+        "License": "MIT License",
+        "License File": "https://github.com/react-native-oh-library/react-native-file-access/blob/sig/LICENSE",
+        "Version Number": "3.1.0-0.0.3",
+        "Owner" : "xiafeng@huawei.com",
+        "Upstream URL": "https://github.com/react-native-oh-library/react-native-file-access",
+        "Description": "Filesystem access for React Native"
+    }
+]
