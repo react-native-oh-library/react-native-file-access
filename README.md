@@ -1,12 +1,12 @@
 # @react-native-oh-tpl/react-native-file-access
 
+This project is based on [react-native-file-access](https://github.com/alpha0010/react-native-file-access)
+
 ## 文档地址 / Documentation URL 
 
-[中文 / Chinese](https://gitee.com/react-native-oh-library/usage-docs/blob/master/zh-cn/react-native-file-access.md)
+- [中文](https://gitee.com/react-native-oh-library/usage-docs/blob/master/zh-cn/react-native-file-access.md)
 
-## Codegen
-
-该库已接入 codegen，具体请查阅文档。
+- [English](https://gitee.com/react-native-oh-library/usage-docs/blob/master/en/react-native-file-access.md)
 
 ## 请悉知 / Acknowledgements
 
