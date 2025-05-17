@@ -128,7 +128,7 @@ export class RNFileAccessTurboModule extends TurboModule implements TM.FileAcces
   readFile(path: string, encoding: string): Promise<string> {
     return new Promise((resolve, reject) => {
       try {
-        let file = fs.openSync(path, fs.OpenMode.READ_WRITE);
+        let file = fs.openSync(path, fs.OpenMode.READ_ONLY);
         const stat = fs.statSync(file.fd)
         let arrayBuffer = new ArrayBuffer(stat.size);
         fs.read(file.fd, arrayBuffer, (err: BusinessError, readLen: number) => {
