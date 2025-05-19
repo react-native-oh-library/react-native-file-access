@@ -103,7 +103,7 @@ export class RNFileAccessTurboModule extends TurboModule implements TM.FileAcces
       let result;
       switch (encoding.toLowerCase()) {
         case "base64":
-          result = buffer.from(data, 'base64').toString('utf8');
+          result = buffer.from(data, 'base64').buffer;
           break;
         case "utf8":
           result = data;
@@ -127,27 +127,32 @@ export class RNFileAccessTurboModule extends TurboModule implements TM.FileAcces
   // 读取文件的内容
   readFile(path: string, encoding: string): Promise<string> {
     return new Promise((resolve, reject) => {
-      let file = fs.openSync(path, fs.OpenMode.READ_WRITE);
-      let arrayBuffer = new ArrayBuffer(4096);
-      fs.read(file.fd, arrayBuffer, (err: BusinessError, readLen: number) => {
-        if (err) {
-          reject("read failed with error message: " + err.message + ", error code: " + err.code);
-        } else {
-          let buf = buffer.from(arrayBuffer, 0, readLen);
-          switch (encoding.toLowerCase()) {
-            case "base64":
-              resolve(buf.toString('base64'));
-              break;
-            case "utf8":
-              resolve(buf.toString('utf8'));
-              break;
-            default:
-              resolve(buf.toString('utf8'));
-              break;
+      try {
+        let file = fs.openSync(path, fs.OpenMode.READ_ONLY);
+        const stat = fs.statSync(file.fd)
+        let arrayBuffer = new ArrayBuffer(stat.size);
+        fs.read(file.fd, arrayBuffer, (err: BusinessError, readLen: number) => {
+          if (err) {
+            reject("read failed with error message: " + err.message + ", error code: " + err.code);
+          } else {
+            let buf = buffer.from(arrayBuffer, 0, readLen);
+            switch (encoding.toLowerCase()) {
+              case "base64":
+                resolve(buf.toString('base64'));
+                break;
+              case "utf8":
+                resolve(buf.toString('utf8'));
+                break;
+              default:
+                resolve(buf.toString('utf8'));
+                break;
+            }
           }
-        }
-        fs.closeSync(file);
-      });
+          fs.closeSync(file);
+        });
+      } catch (err) {
+        reject("read failed with error message: " + JSON.stringify(err));
+      }
     })
   }
 
