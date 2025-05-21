@@ -1,8 +1,8 @@
 # @react-native-oh-tpl/react-native-file-access
 
-This project is based on [react-native-file-access](https://github.com/alpha0010/react-native-file-access)
+This project is based on [react-native-file-access v3.1.0](https://github.com/alpha0010/react-native-file-access/releases/tag/v3.1.0)
 
-## 文档地址 / Documentation URL 
+## 文档地址 / Documentation URL
 
 - [中文](https://gitee.com/react-native-oh-library/usage-docs/blob/master/zh-cn/react-native-file-access.md)
 
